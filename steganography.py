@@ -14,9 +14,7 @@ import textwrap
 
 
 def decode_image(path_to_png):
-    """
-    TODO: Add docstring and complete implementation.
-    """
+
     # Open the image using PIL:
     encoded_image = Image.open(path_to_png)
 
@@ -48,13 +46,7 @@ def decode_image(path_to_png):
 
 
 def encode_image(path_to_png, text_to_hide):
-    """
-    Encodes text into the least significant bits of the red channel of an image.
-    
-    Args:
-    path_to_png (str): The path to the PNG image file to be encoded.
-    text_to_hide (str): The text to hide in the image.
-    """
+
     # Open the original image
     original_image = Image.open(path_to_png)
     encoded_image = original_image.copy()
@@ -86,18 +78,7 @@ def encode_image(path_to_png, text_to_hide):
 
 
 def write_text(text_to_write, image_size=(200, 100), font_size=40):
-    """
-    Creates an image with text written on it.
 
-    Args:
-    text_to_write (str): The text to write to the image.
-    image_size (tuple): The size of the image (width, height).
-    font_path (str): The path to the .ttf font file.
-    font_size (int): The size of the font.
-
-    Returns:
-    PIL.Image: An image object with text written on it.
-    """
     # Create an image with a black background
     image = Image.new('RGB', image_size, 'black')
     draw = ImageDraw.Draw(image)
@@ -109,8 +90,8 @@ def write_text(text_to_write, image_size=(200, 100), font_size=40):
     font = ImageFont.truetype(font_path, font_size)
 
 
-    # Wrap the text
-    lines = textwrap.wrap(text_to_write, width=40)  # Adjust 'width' as needed
+    
+    lines = textwrap.wrap(text_to_write, width=94) 
 
     # Draw each line of text
     y_text = 0
